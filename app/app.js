@@ -32,8 +32,9 @@ class App {
     }
 
     loadDepartments() {
+        let endpoint= window.location.href+'/data.json'; //trick for github page
         $.ajax({
-            url: '/data.json',
+            url: endpoint,
             method: 'GET',
         }).then((data) => {
             this.departments = data;
